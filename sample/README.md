@@ -1,13 +1,7 @@
-# Hello
-
-A pretty simple node.js application. Gotta start some place.
-
-- - -
-
-As noted in [the main README](../README.md), this sample has two pieces:
-
-- a `build` script which will build the container image(s) used
-- a `run` script which deploys resources that use those images
-
-The main purpose of this example is the `run` script, but the `build`
-script is included for complete educational (and reuse) purposes.
+const http = require('http');
+http.createServer(function (request, response) {
+   response.writeHead(200, {'Content-Type': 'text/string'});
+   let dt = new Date();
+   response.end("This is a new string returned on "+ dt.toDateString()+" at "+dt.toLocaleTimeString('en-US'))
+}).listen(8080);
+console.log('Server running at http://0.0.0.0:8080/');
